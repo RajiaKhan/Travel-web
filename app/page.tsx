@@ -1,4 +1,7 @@
 "use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 import Image from "next/image";
 export default function Home() {
   return (
@@ -247,6 +250,83 @@ export default function Home() {
             </div>
           </div>
         </a>
+      </div>
+      <div className="mt-12 lg:max-w-[1512px] w-full mx-auto ">
+        <h1 className="text-black font-bold text-[35px] mb-8">
+          Browse by property type
+        </h1>
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={4}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <div className="">
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto "
+                src="/Frame 31.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto "
+                src="/Frame 36.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto "
+                src="/Frame 37.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto "
+                src="/Frame 31.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto "
+                src="/Frame 36.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto"
+                src="/Frame 31.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <Image
+                className="mx-auto"
+                src="/Frame 37.png"
+                width={343}
+                height={221}
+                alt="Frame"
+              />
+            </SwiperSlide>
+          </div>
+        </Swiper>
       </div>
       <div className="mt-12  mx-auto">
         <a className="relative block group">
