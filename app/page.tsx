@@ -251,7 +251,7 @@ export default function Home() {
           </div>
         </a>
       </div>
-      <div className="mt-12 lg:max-w-[1512px] w-full mx-auto ">
+      <div className="mt-12 lg:max-w-[1246px] w-full mx-auto ">
         <h1 className="text-black font-bold text-[35px] mb-8">
           Browse by property type
         </h1>
