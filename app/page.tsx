@@ -1,13 +1,12 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-
 import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
       <div className="">
-        <a className="relative block group pb-44 ">
+        <a className="relative block group pb-44  ">
           <Image
             className="absolute inset-0 object-cover w-full  
               h-full"
@@ -17,40 +16,42 @@ export default function Home() {
             height={936}
           />
           <div className="relative">
-            <div className="flex justify-between p-5">
-              <div className="">
-                <h1 className="font-bold text-white text-[35px]">trxvl.</h1>
-              </div>
-              <div className="flex gap-5 mt-4">
+            <div className="hidden lg:block">
+              <div className="flex justify-between p-5 ">
                 <div className="">
-                  <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
-                    Home
-                  </button>
+                  <h1 className="font-bold text-white text-[35px]">trxvl.</h1>
                 </div>
-                <div className="">
-                  <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
-                    Stays
-                  </button>
-                </div>
-                <div className="">
-                  <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
-                    Flights
-                  </button>
-                </div>
-                <div className="">
-                  <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
-                    Packages
-                  </button>
-                </div>
-                <div className="">
-                  <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
-                    Sign Up
-                  </button>
+                <div className="flex gap-5 mt-4">
+                  <div className="">
+                    <button className="text-[17px] text-white  pb-4 px-3 border-b ">
+                      Home
+                    </button>
+                  </div>
+                  <div className="">
+                    <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
+                      Stays
+                    </button>
+                  </div>
+                  <div className="">
+                    <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
+                      Flights
+                    </button>
+                  </div>
+                  <div className="">
+                    <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
+                      Packages
+                    </button>
+                  </div>
+                  <div className="">
+                    <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
+                      Sign Up
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="lg:max-w-[1246px] w-full mx-auto mt-12 px-3">
-              <h1 className="text-white font-bold text-[79.71px] w-[840.24px]">
+            <div className="lg:max-w-[1246px] w-full mx-auto mt-5 px-5">
+              <h1 className="text-white font-bold lg:text-[79.71px] md:text-[50px] text-[25px] w-[840.24px]">
                 The whole world awaits.
               </h1>
               <style jsx>{`
@@ -58,8 +59,8 @@ export default function Home() {
                   background-color: rgba(255, 255, 255, 0.4);
                 }
               `}</style>
-              <div className="bg px-3 py-3 rounded-3xl mt-5">
-                <div className="flex justify-between">
+              <div className="bg px-3 py-3 rounded-3xl mt-5 ">
+                <div className="lg:flex justify-between">
                   <div className="lg:w-[428px] w-full ">
                     <label className="relative block w-full cursor-text">
                       <span className="sr-only">Search</span>
@@ -80,8 +81,8 @@ export default function Home() {
                       />
                     </label>
                   </div>
-                  <div className="flex lg:gap-10 xl:gap-14  2xl:gap-14 gap-5  lg:w-[710px] w-full">
-                    <div className="flex gap-3 items-center cursor-pointer ">
+                  <div className="md:flex lg:gap-10 xl:gap-14  2xl:gap-14 gap-5  lg:w-[710px] w-full">
+                    <div className="flex gap-3 items-center cursor-pointer mt-3 lg:mt-0">
                       <Image
                         src="/icon-2.svg"
                         width={22}
@@ -92,7 +93,7 @@ export default function Home() {
                         Check in
                       </h1>
                     </div>
-                    <div className="flex gap-3 items-center cursor-pointer ">
+                    <div className="flex gap-3 items-center cursor-pointer  mt-3 lg:mt-0 ">
                       <Image
                         src="/icon-3.svg"
                         width={22}
@@ -103,7 +104,7 @@ export default function Home() {
                         Check out
                       </h1>
                     </div>{" "}
-                    <div className="flex gap-3 items-center cursor-pointer ">
+                    <div className="flex gap-3 items-center cursor-pointer  mt-3 lg:mt-0">
                       <Image
                         src="/icon-4.svg"
                         width={22}
@@ -115,240 +116,584 @@ export default function Home() {
                       </h1>
                     </div>{" "}
                     <div className="">
-                      <button className="rounded-full bg-white text-[#2659C3] text-[17px] px-9 py-2.5">
+                      <button className="rounded-full bg-white text-[#2659C3] text-[17px] px-9 py-2.5  mt-3 lg:mt-0">
                         Search
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <h1 className="text-white font-bold text-[35px] mt-12">
+              <h1 className="text-white font-bold text-[35px] mt-12 hidden lg:block">
                 Top categories
               </h1>
-              <div className="flex justify-between gap-5 items-center mt-10">
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-5.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Beaches
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-6.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Deserts
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-7.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Mountains
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-8.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Iconic Cities
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-9.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Houseboats
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-10.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Countryside
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-11.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Camping
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-12.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Castles
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-13.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Skiing
-                  </h1>
-                </div>
-                <div className="">
-                  <Image
-                    className="mx-auto"
-                    src="/icon-14.svg"
-                    width={35}
-                    height={35}
-                    alt="icon"
-                  />
-                  <h1 className="text-white text-[17px] font-normal text-center pt-3">
-                    Tropical
-                  </h1>
+              <div className=" hidden lg:block">
+                <div className="flex justify-between gap-5 items-center mt-10">
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-5.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Beaches
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-6.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Deserts
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-7.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Mountains
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-8.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Iconic Cities
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-9.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Houseboats
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-10.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Countryside
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-11.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Camping
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-12.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Castles
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-13.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Skiing
+                    </h1>
+                  </div>
+                  <div className="">
+                    <Image
+                      className="mx-auto"
+                      src="/icon-14.svg"
+                      width={35}
+                      height={35}
+                      alt="icon"
+                    />
+                    <h1 className="text-white text-[17px] font-normal text-center pt-3">
+                      Tropical
+                    </h1>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div className="lg:max-w-[1512px] w-full mx-auto mt-12 lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 ">
+              <h1 className="text-white font-bold text-[35px]  px-5">
+                Top Vacation Destinations
+              </h1>
             </div>
           </div>
         </a>
       </div>
-      <div className="mt-12 lg:max-w-[1246px] w-full mx-auto ">
-        <h1 className="text-black font-bold text-[35px] mb-8">
-          Browse by property type
-        </h1>
+      <div className="-mt-36 lg:max-w-[1512px] w-full mx-auto  lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 ">
+        <div className="px-5">
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={4}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <div className="px-5">
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 16.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 17.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 18.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 16.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 17.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto"
+                  src="/Frame 18.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto"
+                  src="/Frame 16.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+            </div>
+          </Swiper>
+        </div>
+      </div>
+      <div className="mt-12  lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 bg hidden lg:block">
+        <h1 className="text-black font-bold text-[35px] mb-8 px-5">Offers</h1>
         <Swiper
-          spaceBetween={30}
-          slidesPerView={4}
+          spaceBetween={40}
+          slidesPerView={2}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
           <div className="">
-            <SwiperSlide className=" ">
-              <Image
-                className="mx-auto "
-                src="/Frame 31.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
+            <SwiperSlide className="  ">
+              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
+                <div className="">
+                  <Image
+                    className="mx-auto rounded-3xl "
+                    src="/image 19.png"
+                    width={343.18}
+                    height={233.56}
+                    alt="Frame"
+                  />
+                </div>
+                <div className="">
+                  <h1 className="text-black text-[17px] ">Domestic Flights</h1>
+                  <h1 className="text-[20px] text-black font-medium mt-2">
+                    Huge savings on flight with trxvl.
+                  </h1>
+                  <h1 className="text-black text-[17px] mt-3 ">
+                    Book domestic flights starting @ just ₹1459
+                  </h1>
+                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </SwiperSlide>
             <SwiperSlide className=" ">
-              <Image
-                className="mx-auto "
-                src="/Frame 36.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
+              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
+                <div className="">
+                  <Image
+                    className="mx-auto rounded-3xl "
+                    src="/image 16.png"
+                    width={343.18}
+                    height={233.56}
+                    alt="Frame"
+                  />
+                </div>
+                <div className="">
+                  <h1 className="text-black text-[17px] ">
+                    International Flights
+                  </h1>
+                  <h1 className="text-[20px] text-black font-medium mt-2">
+                    Huge savings on flight with trxvl.
+                  </h1>
+                  <h1 className="text-black text-[17px] mt-3 ">
+                    Book domestic flights starting @ just ₹1459
+                  </h1>
+                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </SwiperSlide>
             <SwiperSlide className=" ">
-              <Image
-                className="mx-auto "
-                src="/Frame 37.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
+              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
+                <div className="">
+                  <Image
+                    className="mx-auto rounded-3xl "
+                    src="/image 19.png"
+                    width={343.18}
+                    height={233.56}
+                    alt="Frame"
+                  />
+                </div>
+                <div className="">
+                  <h1 className="text-black text-[17px] ">Domestic Flights</h1>
+                  <h1 className="text-[20px] text-black font-medium mt-2">
+                    Huge savings on flight with trxvl.
+                  </h1>
+                  <h1 className="text-black text-[17px] mt-3 ">
+                    Book domestic flights starting @ just ₹1459
+                  </h1>
+                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </SwiperSlide>
             <SwiperSlide className=" ">
-              <Image
-                className="mx-auto "
-                src="/Frame 31.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <Image
-                className="mx-auto "
-                src="/Frame 36.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <Image
-                className="mx-auto"
-                src="/Frame 31.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <Image
-                className="mx-auto"
-                src="/Frame 37.png"
-                width={343}
-                height={221}
-                alt="Frame"
-              />
+              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
+                <div className="">
+                  <Image
+                    className="mx-auto rounded-3xl "
+                    src="/image 16.png"
+                    width={343.18}
+                    height={233.56}
+                    alt="Frame"
+                  />
+                </div>
+                <div className="">
+                  <h1 className="text-black text-[17px] ">
+                    International Flights
+                  </h1>
+                  <h1 className="text-[20px] text-black font-medium mt-2">
+                    Huge savings on flight with trxvl.
+                  </h1>
+                  <h1 className="text-black text-[17px] mt-3 ">
+                    Book domestic flights starting @ just ₹1459
+                  </h1>
+                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                    Book Now
+                  </button>
+                </div>
+              </div>
             </SwiperSlide>
           </div>
         </Swiper>
       </div>
-      <div className="mt-12  mx-auto">
-        <a className="relative block group">
-          <Image
-            className="absolute inset-0 object-cover mx-auto rounded-3xl 
-              h-full"
-            src="/image 20.png"
-            alt="img"
-            width={1247}
-            height={936}
-          />
-          <div className="relative lg:max-w-[1247px] w-full mx-auto p-24 ">
-            <h1 className="text-white font-bold w-[751px] text-[61.99px] ">
-              Plan your trip with travel expert
-            </h1>
-            <h1 className="text-white text-[35px] font-normal mt-6">
-              Our professional advisors can craft your perfect itinerary
-            </h1>
-          </div>
-        </a>
+
+      <div className="mt-12 lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0  ">
+        <div className="px-5">
+          <h1 className="text-black font-bold text-[35px] mb-8 ">
+            Browse by property type
+          </h1>
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={4}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <div className="">
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 31.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 36.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 37.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 31.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto "
+                  src="/Frame 36.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto"
+                  src="/Frame 31.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <Image
+                  className="mx-auto"
+                  src="/Frame 37.png"
+                  width={343}
+                  height={221}
+                  alt="Frame"
+                />
+              </SwiperSlide>
+            </div>
+          </Swiper>
+        </div>
       </div>
-      <div className="mt-12">
+      <div className=" lg:mt-20  mx-auto lg:pl-0 xl:pl-8 2xl:pl-8 pl-0 ">
+        <div className="px-5">
+          <a className="relative block group ">
+            <Image
+              className="absolute inset-0 object-cover mx-auto rounded-3xl 
+              h-full"
+              src="/image 20.png"
+              alt="img"
+              width={1247}
+              height={936}
+            />
+            <div className="relative lg:max-w-[1246px] w-full  mx-auto p-24  ">
+              <h1 className="text-white font-bold lg:w-[751px] w-full lg:text-[61.99px] md:text-[41.99px] text-[20.99px]">
+                Plan your trip with travel expert
+              </h1>
+              <h1 className="text-white lg:text-[35px] md:text-[21.99px] text-[10.99px] font-normal mt-6">
+                Our professional advisors can craft your perfect itinerary
+              </h1>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div className="mt-12  lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0  ">
+        <div className="px-5">
+          <h1 className="text-black font-bold text-[35px] mb-8 ">
+            Browse by property type
+          </h1>
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={4}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <div className="">
+              <SwiperSlide className=" ">
+                <div className="shadow-2xl rounded-3xl my-5 ">
+                  <div className=" p-3 border border-gray-50 rounded-3xl">
+                    <Image
+                      className="mx-auto "
+                      src="/Frame 32.png"
+                      width={343}
+                      height={221}
+                      alt="Frame"
+                    />
+                    <h1 className="text-black text-[20px] mt-5 ">India</h1>
+                    <h1 className="text-black text-[17px] mt-3 font-light">
+                      Travel community
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-2 font-light">
+                      155,073 travelers
+                    </h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <div className="shadow-2xl rounded-3xl my-5 ">
+                  <div className=" p-3 border border-gray-50 rounded-3xl">
+                    <Image
+                      className="mx-auto "
+                      src="/Frame 33.png"
+                      width={343}
+                      height={221}
+                      alt="Frame"
+                    />
+                    <h1 className="text-black text-[20px] mt-5 ">
+                      Travel Talk
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-3 font-light">
+                      Travel community
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-2 font-light">
+                      155,073 travelers
+                    </h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <div className="shadow-2xl rounded-3xl my-5 ">
+                  <div className=" p-3 border border-gray-50 rounded-3xl">
+                    <Image
+                      className="mx-auto "
+                      src="/Frame 34.png"
+                      width={343}
+                      height={221}
+                      alt="Frame"
+                    />
+                    <h1 className="text-black text-[20px] mt-5 ">Beach</h1>
+                    <h1 className="text-black text-[17px] mt-3 font-light">
+                      Travel community
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-2 font-light">
+                      155,073 travelers
+                    </h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <div className="shadow-2xl rounded-3xl my-5 ">
+                  <div className=" p-3 border border-gray-50 rounded-3xl">
+                    <Image
+                      className="mx-auto "
+                      src="/Frame 32.png"
+                      width={343}
+                      height={221}
+                      alt="Frame"
+                    />
+                    <h1 className="text-black text-[20px] mt-5 ">India</h1>
+                    <h1 className="text-black text-[17px] mt-3 font-light">
+                      Travel community
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-2 font-light">
+                      155,073 travelers
+                    </h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <div className="shadow-2xl rounded-3xl my-5 ">
+                  <div className=" p-3 border border-gray-50 rounded-3xl">
+                    <Image
+                      className="mx-auto "
+                      src="/Frame 33.png"
+                      width={343}
+                      height={221}
+                      alt="Frame"
+                    />
+                    <h1 className="text-black text-[20px] mt-5 ">
+                      Travel Talk
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-3 font-light">
+                      Travel community
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-2 font-light">
+                      155,073 travelers
+                    </h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=" ">
+                <div className="shadow-2xl rounded-3xl my-5 ">
+                  <div className=" p-3 border border-gray-50 rounded-3xl">
+                    <Image
+                      className="mx-auto "
+                      src="/Frame 34.png"
+                      width={343}
+                      height={221}
+                      alt="Frame"
+                    />
+                    <h1 className="text-black text-[20px] mt-5 ">Beach</h1>
+                    <h1 className="text-black text-[17px] mt-3 font-light">
+                      Travel community
+                    </h1>
+                    <h1 className="text-black text-[17px] mt-2 font-light">
+                      155,073 travelers
+                    </h1>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </div>
+          </Swiper>
+        </div>
+      </div>
+      <div className="mt-12 lg:mt-20 hidden lg:block">
         <a className="relative block group  ">
           <Image
             className="absolute inset-0 object-cover w-full  
@@ -358,7 +703,7 @@ export default function Home() {
             width={1247}
             height={936}
           />
-          <div className="relative lg:max-w-[1247px] w-full mx-auto pt-32 ">
+          <div className="relative lg:max-w-[1247px] w-full mx-auto pt-32 px-5 ">
             <div className="flex justify-between gap-12">
               <div className="w-[339.59px]">
                 <Image
@@ -428,11 +773,11 @@ export default function Home() {
       </div>
       <div className="bg-[#141414] p-32 ">
         <div className="lg:max-w-[1247px] w-full mx-auto">
-          <div className="grid grid-cols-5 gap-44">
-            <div className="w-[93px]">
+          <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8">
+            <div className="lg:w-[93px] w-full">
               <h1 className="font-bold text-white text-[35px]">Trxvl.</h1>
             </div>
-            <div className="w-[160px]">
+            <div className="lg:w-[160px] w-full ">
               <h1 className="text-sm text-[#808080] ">
                 Seslendirme ve Alt Jazz
               </h1>
@@ -440,19 +785,19 @@ export default function Home() {
               <h1 className="text-sm text-[#808080] mt-4">Gillie</h1>
               <h1 className="text-sm text-[#808080] mt-4">Size Last</h1>
             </div>
-            <div className="w-[109px]">
+            <div className="lg:w-[109px] w-full lg:mt-0 mt-4">
               <h1 className="text-sm text-[#808080]">Self Betimes</h1>
               <h1 className="text-sm text-[#808080] mt-4">
                 Yatırımcı İlişkileri
               </h1>
               <h1 className="text-sm text-[#808080] mt-4">Basal Himmler</h1>
             </div>
-            <div className="w-[88px]">
+            <div className="lg:w-[88px] w-full lg:mt-0 mt-4">
               <h1 className="text-sm text-[#808080]">Yard Market</h1>
               <h1 className="text-sm text-[#808080] mt-4">Is İmkanları</h1>
               <h1 className="text-sm text-[#808080] mt-4">Car Tercihleri</h1>
             </div>
-            <div className="w-[120px]">
+            <div className="lg:w-[120px] w-full lg:mt-0 mt-4">
               <h1 className="text-sm text-[#808080]">Hedge Karla</h1>
               <h1 className="text-sm text-[#808080] mt-4">Mullein Koşulları</h1>
               <h1 className="text-sm text-[#808080] mt-4">Autumnal Bulgier</h1>
