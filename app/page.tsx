@@ -2,11 +2,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <div className="">
-        <a className="relative block group pb-44  ">
+        <a className="relative block group pb-44">
           <Image
             className="absolute inset-0 object-cover w-full  
               h-full"
@@ -23,9 +24,11 @@ export default function Home() {
                 </div>
                 <div className="flex gap-5 mt-4">
                   <div className="">
-                    <button className="text-[17px] text-white  pb-4 px-3 border-b ">
-                      Home
-                    </button>
+                    <Link href="/page2">
+                      <button className="text-[17px] text-white  pb-4 px-3 border-b ">
+                        Home
+                      </button>
+                    </Link>
                   </div>
                   <div className="">
                     <button className="text-[17px] text-white hover:border-b pb-4 px-3 focus:border-b ">
@@ -50,16 +53,83 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="lg:max-w-[1246px] w-full mx-auto mt-5 px-5">
-              <h1 className="text-white font-bold lg:text-[79.71px] md:text-[50px] text-[25px] w-[840.24px]">
+            <div className="lg:max-w-[1246px] w-full mx-auto pt-16 lg:pt-0 px-5">
+              <h1 className="text-white font-bold lg:text-[79.71px] md:text-[50px] text-[24px] w-[840.24px]">
                 The whole world awaits.
               </h1>
+
               <style jsx>{`
                 .bg {
                   background-color: rgba(255, 255, 255, 0.4);
                 }
               `}</style>
-              <div className="bg px-3 py-3 rounded-3xl mt-5 ">
+              <div className="block lg:hidden ">
+                <div className="bg px-2 py-2 rounded-3xl mt-5">
+                  <label className="relative block w-full cursor-text ">
+                    <span className="sr-only">Search</span>
+                    <span className="absolute inset-y-0 left-0 flex items-center  pl-8 w-full">
+                      <Image
+                        className=""
+                        src="/icon-1.svg"
+                        alt="background image"
+                        height={22}
+                        width={22}
+                      />
+                    </span>
+                    <input
+                      className=" placeholder:text-white py-2 pl-16 pr-3  text-[12px] bg-transparent outline-none text-white "
+                      placeholder="Search destinations, hotels"
+                      type="text"
+                      name="search"
+                    />
+                  </label>
+                </div>
+                <div className="bg px-2 py-3.5 rounded-3xl mt-5">
+                  <div className="flex gap-6 justify-center items-center  w-full">
+                    <div className="flex gap-3 items-center cursor-pointer">
+                      <Image
+                        src="/icon-2.svg"
+                        width={22}
+                        height={22}
+                        alt="icon"
+                      />
+                      <h1 className="text-white font-normal text-[12px]">
+                        Check in
+                      </h1>
+                    </div>
+                    <div className="flex gap-3 items-center cursor-pointer">
+                      <Image
+                        src="/icon-3.svg"
+                        width={22}
+                        height={22}
+                        alt="icon"
+                      />
+                      <h1 className="text-white font-normal text-[12px]">
+                        Check out
+                      </h1>
+                    </div>{" "}
+                  </div>
+                </div>
+                <div className="bg px-2 py-3.5 rounded-3xl mt-5">
+                  <div className="flex gap-3 items-center  justify-center cursor-pointer ">
+                    <Image
+                      src="/icon-4.svg"
+                      width={22}
+                      height={22}
+                      alt="icon"
+                    />
+                    <h1 className="text-white font-normal text-[12px]">
+                      1 room, 2 adults
+                    </h1>
+                  </div>{" "}
+                </div>
+                <div className="">
+                  <button className="rounded-full bg-indigo-700 hover:bg-indigo-900 duration-150  text-white  text-[12px] w-full py-3.5  mt-5">
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div className="bg px-3 py-3 rounded-3xl mt-5 hidden lg:block ">
                 <div className="lg:flex justify-between">
                   <div className="lg:w-[428px] w-full ">
                     <label className="relative block w-full cursor-text">
@@ -123,7 +193,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <h1 className="text-white font-bold text-[35px] mt-12 hidden lg:block">
+              <h1 className="text-white font-bold lg:text-[35px] md:text-[30px] text-[24px] mt-12 hidden lg:block">
                 Top categories
               </h1>
               <div className=" hidden lg:block">
@@ -252,7 +322,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:max-w-[1512px] w-full mx-auto mt-12 lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 ">
-              <h1 className="text-white font-bold text-[35px]  px-5">
+              <h1 className="text-white font-bold lg:text-[35px] md:text-[30px] text-[24px]  px-5">
                 Top Vacation Destinations
               </h1>
             </div>
@@ -262,8 +332,17 @@ export default function Home() {
       <div className="-mt-36 lg:max-w-[1512px] w-full mx-auto  lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 ">
         <div className="px-5">
           <Swiper
-            spaceBetween={30}
-            slidesPerView={4}
+            spaceBetween={5}
+            breakpoints={{
+              640: {
+                width: 640,
+                slidesPerView: 1,
+              },
+              768: {
+                width: 768,
+                slidesPerView: 2,
+              },
+            }}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -335,18 +414,31 @@ export default function Home() {
           </Swiper>
         </div>
       </div>
-      <div className="mt-12  lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 bg hidden lg:block">
-        <h1 className="text-black font-bold text-[35px] mb-8 px-5">Offers</h1>
-        <Swiper
-          spaceBetween={40}
-          slidesPerView={2}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <div className="">
-            <SwiperSlide className="  ">
-              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
-                <div className="">
+      <div className="mt-12  lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0 bg">
+        <h1 className="text-black font-bold lg:text-[35px] md:text-[30px] text-[24px]  md:mb-8 mb-0 px-5">
+          Offers
+        </h1>
+        <div className="px-5">
+          <Swiper
+            spaceBetween={30}
+            breakpoints={{
+              1400: {
+                width: 1400,
+                slidesPerView: 2,
+              },
+              640: {
+                width: 640,
+                slidesPerView: 1,
+              },
+              768: {
+                width: 768,
+                slidesPerView: 1,
+              },
+            }}
+          >
+            <SwiperSlide className=" ">
+              <div className=" lg:max-w-[761px] w-full md:flex rounded-3xl gap-5  py-5 px-3 items-center shadow-md border-zinc-50 border p">
+                <div className="hidden md:block">
                   <Image
                     className="mx-auto rounded-3xl "
                     src="/image 19.png"
@@ -355,50 +447,72 @@ export default function Home() {
                     alt="Frame"
                   />
                 </div>
-                <div className="">
-                  <h1 className="text-black text-[17px] ">Domestic Flights</h1>
-                  <h1 className="text-[20px] text-black font-medium mt-2">
-                    Huge savings on flight with trxvl.
-                  </h1>
-                  <h1 className="text-black text-[17px] mt-3 ">
-                    Book domestic flights starting @ just ₹1459
-                  </h1>
-                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className=" ">
-              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
-                <div className="">
+                <div className="md:hidden block">
                   <Image
-                    className="mx-auto rounded-3xl "
-                    src="/image 16.png"
+                    className="mx-auto w-full rounded-3xl "
+                    src="/image 19.png"
                     width={343.18}
                     height={233.56}
                     alt="Frame"
                   />
                 </div>
-                <div className="">
-                  <h1 className="text-black text-[17px] ">
-                    International Flights
+                <div className="md:mt-0 mt-5">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] ">
+                    Domestic Flights
                   </h1>
-                  <h1 className="text-[20px] text-black font-medium mt-2">
+                  <h1 className="lg:text-[20px] md:text-[18px] text-[18px] text-black font-medium mt-2">
                     Huge savings on flight with trxvl.
                   </h1>
-                  <h1 className="text-black text-[17px] mt-3 ">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] mt-3 ">
                     Book domestic flights starting @ just ₹1459
                   </h1>
-                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                  <button className="bg-[#2659C3] text-white rounded-full py-3  lg:w-[130px] w-full lg:text-[17px] md:text-[15px] text-[12px] mt-3">
                     Book Now
                   </button>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide className=" ">
-              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
+              <div className=" lg:max-w-[761px] w-full md:flex rounded-3xl gap-5  py-5 px-3 items-center shadow-md border-zinc-50 border">
                 <div className="">
+                  <div className="hidden md:block">
+                    <Image
+                      className="mx-auto rounded-3xl "
+                      src="/image 16.png"
+                      width={343.18}
+                      height={233.56}
+                      alt="Frame"
+                    />
+                  </div>
+                  <div className="md:hidden block">
+                    <Image
+                      className="mx-auto w-full rounded-3xl "
+                      src="/image 16.png"
+                      width={343.18}
+                      height={233.56}
+                      alt="Frame"
+                    />
+                  </div>
+                </div>
+                <div className="md:mt-0 mt-5">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] ">
+                    International Flights
+                  </h1>
+                  <h1 className="lg:text-[20px] md:text-[18px] text-[18px] text-black font-medium mt-2">
+                    Huge savings on flight with trxvl.
+                  </h1>
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] mt-3 ">
+                    Book domestic flights starting @ just ₹1459
+                  </h1>
+                  <button className="bg-[#2659C3] text-white rounded-full py-3  lg:w-[130px] w-full lg:text-[17px] md:text-[15px] text-[12px] mt-3">
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <div className=" lg:max-w-[761px] w-full md:flex rounded-3xl gap-5  py-5 px-3 items-center shadow-md border-zinc-50 border">
+                <div className="hidden md:block">
                   <Image
                     className="mx-auto rounded-3xl "
                     src="/image 19.png"
@@ -407,59 +521,90 @@ export default function Home() {
                     alt="Frame"
                   />
                 </div>
-                <div className="">
-                  <h1 className="text-black text-[17px] ">Domestic Flights</h1>
-                  <h1 className="text-[20px] text-black font-medium mt-2">
+                <div className="md:hidden block">
+                  <Image
+                    className="mx-auto w-full rounded-3xl "
+                    src="/image 19.png"
+                    width={343.18}
+                    height={233.56}
+                    alt="Frame"
+                  />
+                </div>
+                <div className="md:mt-0 mt-5">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] ">
+                    Domestic Flights
+                  </h1>
+                  <h1 className="lg:text-[20px] md:text-[18px] text-[18px] text-black font-medium mt-2">
                     Huge savings on flight with trxvl.
                   </h1>
-                  <h1 className="text-black text-[17px] mt-3 ">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] mt-3 ">
                     Book domestic flights starting @ just ₹1459
                   </h1>
-                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                  <button className="bg-[#2659C3] text-white rounded-full py-3  lg:w-[130px] w-full lg:text-[17px] md:text-[15px] text-[12px] mt-3">
                     Book Now
                   </button>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide className=" ">
-              <div className=" lg:max-w-[761px] w-full flex rounded-3xl gap-5  py-5 px-3 ">
+              <div className=" lg:max-w-[761px] w-full md:flex rounded-3xl gap-5  py-5 px-3 items-center shadow-md border-zinc-50 border">
                 <div className="">
-                  <Image
-                    className="mx-auto rounded-3xl "
-                    src="/image 16.png"
-                    width={343.18}
-                    height={233.56}
-                    alt="Frame"
-                  />
+                  <div className="hidden md:block">
+                    <Image
+                      className="mx-auto rounded-3xl "
+                      src="/image 16.png"
+                      width={343.18}
+                      height={233.56}
+                      alt="Frame"
+                    />
+                  </div>
+                  <div className="md:hidden block">
+                    <Image
+                      className="mx-auto w-full rounded-3xl "
+                      src="/image 16.png"
+                      width={343.18}
+                      height={233.56}
+                      alt="Frame"
+                    />
+                  </div>
                 </div>
-                <div className="">
-                  <h1 className="text-black text-[17px] ">
+                <div className="md:mt-0 mt-5">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] ">
                     International Flights
                   </h1>
-                  <h1 className="text-[20px] text-black font-medium mt-2">
+                  <h1 className="lg:text-[20px] md:text-[18px] text-[18px] text-black font-medium mt-2">
                     Huge savings on flight with trxvl.
                   </h1>
-                  <h1 className="text-black text-[17px] mt-3 ">
+                  <h1 className="text-black  lg:text-[17px] md:text-[15px] text-[12px] mt-3 ">
                     Book domestic flights starting @ just ₹1459
                   </h1>
-                  <button className="bg-[#2659C3] text-white rounded-full py-3 px-5 text-[17px] mt-3">
+                  <button className="bg-[#2659C3] text-white rounded-full py-3  lg:w-[130px] w-full lg:text-[17px] md:text-[15px] text-[12px] mt-3">
                     Book Now
                   </button>
                 </div>
               </div>
             </SwiperSlide>
-          </div>
-        </Swiper>
+          </Swiper>
+        </div>
       </div>
 
       <div className="mt-12 lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0  ">
         <div className="px-5">
-          <h1 className="text-black font-bold text-[35px] mb-8 ">
+          <h1 className="text-black font-bold lg:text-[35px] md:text-[30px] text-[24px] mb-8 ">
             Browse by property type
           </h1>
           <Swiper
-            spaceBetween={30}
-            slidesPerView={4}
+            spaceBetween={5}
+            breakpoints={{
+              640: {
+                width: 640,
+                slidesPerView: 1,
+              },
+              768: {
+                width: 768,
+                slidesPerView: 2,
+              },
+            }}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
@@ -531,7 +676,7 @@ export default function Home() {
           </Swiper>
         </div>
       </div>
-      <div className=" lg:mt-20  mx-auto lg:pl-0 xl:pl-8 2xl:pl-8 pl-0 ">
+      <div className=" lg:mt-20  mt-12  mx-auto lg:pl-0 xl:pl-8 2xl:pl-8 pl-0 ">
         <div className="px-5">
           <a className="relative block group ">
             <Image
@@ -542,7 +687,7 @@ export default function Home() {
               width={1247}
               height={936}
             />
-            <div className="relative lg:max-w-[1246px] w-full  mx-auto p-24  ">
+            <div className="relative lg:max-w-[1246px] w-full  mx-auto lg:p-24 md:p-20 p-12 ">
               <h1 className="text-white font-bold lg:w-[751px] w-full lg:text-[61.99px] md:text-[41.99px] text-[20.99px]">
                 Plan your trip with travel expert
               </h1>
@@ -555,141 +700,156 @@ export default function Home() {
       </div>
       <div className="mt-12  lg:mt-20 lg:max-w-[1512px] w-full mx-auto lg:pl-[0px] xl:pl-[55px] 2xl:pl-[135px] pl-0  ">
         <div className="px-5">
-          <h1 className="text-black font-bold text-[35px] mb-8 ">
-            Browse by property type
+          <h1 className="text-black font-bold lg:text-[35px] md:text-[30px] text-[24px]  md:mb-8 mb-0 ">
+            Connect with other travelers in our community
           </h1>
           <Swiper
-            spaceBetween={30}
-            slidesPerView={4}
+            spaceBetween={20}
+            breakpoints={{
+              640: {
+                width: 640,
+                slidesPerView: 1,
+              },
+              768: {
+                width: 768,
+                slidesPerView: 2,
+              },
+            }}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
           >
-            <div className="">
-              <SwiperSlide className=" ">
-                <div className="shadow-2xl rounded-3xl my-5 ">
-                  <div className=" p-3 border border-gray-50 rounded-3xl">
-                    <Image
-                      className="mx-auto "
-                      src="/Frame 32.png"
-                      width={343}
-                      height={221}
-                      alt="Frame"
-                    />
-                    <h1 className="text-black text-[20px] mt-5 ">India</h1>
-                    <h1 className="text-black text-[17px] mt-3 font-light">
-                      Travel community
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-2 font-light">
-                      155,073 travelers
-                    </h1>
-                  </div>
+            <SwiperSlide className=" ">
+              <div className="shadow-md rounded-3xl my-5 ">
+                <div className=" p-3 border border-gray-50 rounded-3xl">
+                  <Image
+                    className="mx-auto "
+                    src="/Frame 32.png"
+                    width={343}
+                    height={221}
+                    alt="Frame"
+                  />
+                  <h1 className="text-black lg:text-[20px] md:text-[18px] text-[14px] mt-5 ">
+                    India
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-3 font-light">
+                    Travel community
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-2 font-light">
+                    155,073 travelers
+                  </h1>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className=" ">
-                <div className="shadow-2xl rounded-3xl my-5 ">
-                  <div className=" p-3 border border-gray-50 rounded-3xl">
-                    <Image
-                      className="mx-auto "
-                      src="/Frame 33.png"
-                      width={343}
-                      height={221}
-                      alt="Frame"
-                    />
-                    <h1 className="text-black text-[20px] mt-5 ">
-                      Travel Talk
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-3 font-light">
-                      Travel community
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-2 font-light">
-                      155,073 travelers
-                    </h1>
-                  </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <div className="shadow-md rounded-3xl my-5 ">
+                <div className=" p-3 border border-gray-50 rounded-3xl">
+                  <Image
+                    className="mx-auto "
+                    src="/Frame 33.png"
+                    width={343}
+                    height={221}
+                    alt="Frame"
+                  />
+                  <h1 className="text-black lg:text-[20px] md:text-[18px] text-[14px] mt-5 ">
+                    Travel Talk
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-3 font-light">
+                    Travel community
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-2 font-light">
+                    155,073 travelers
+                  </h1>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className=" ">
-                <div className="shadow-2xl rounded-3xl my-5 ">
-                  <div className=" p-3 border border-gray-50 rounded-3xl">
-                    <Image
-                      className="mx-auto "
-                      src="/Frame 34.png"
-                      width={343}
-                      height={221}
-                      alt="Frame"
-                    />
-                    <h1 className="text-black text-[20px] mt-5 ">Beach</h1>
-                    <h1 className="text-black text-[17px] mt-3 font-light">
-                      Travel community
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-2 font-light">
-                      155,073 travelers
-                    </h1>
-                  </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <div className="shadow-md rounded-3xl my-5 ">
+                <div className=" p-3 border border-gray-50 rounded-3xl">
+                  <Image
+                    className="mx-auto "
+                    src="/Frame 34.png"
+                    width={343}
+                    height={221}
+                    alt="Frame"
+                  />
+                  <h1 className="text-black lg:text-[20px] md:text-[18px] text-[14px] mt-5 ">
+                    Beach
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-3 font-light">
+                    Travel community
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-2 font-light">
+                    155,073 travelers
+                  </h1>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className=" ">
-                <div className="shadow-2xl rounded-3xl my-5 ">
-                  <div className=" p-3 border border-gray-50 rounded-3xl">
-                    <Image
-                      className="mx-auto "
-                      src="/Frame 32.png"
-                      width={343}
-                      height={221}
-                      alt="Frame"
-                    />
-                    <h1 className="text-black text-[20px] mt-5 ">India</h1>
-                    <h1 className="text-black text-[17px] mt-3 font-light">
-                      Travel community
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-2 font-light">
-                      155,073 travelers
-                    </h1>
-                  </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <div className="shadow-md rounded-3xl my-5 ">
+                <div className=" p-3 border border-gray-50 rounded-3xl">
+                  <Image
+                    className="mx-auto "
+                    src="/Frame 32.png"
+                    width={343}
+                    height={221}
+                    alt="Frame"
+                  />
+                  <h1 className="text-black lg:text-[20px] md:text-[18px] text-[14px] mt-5 ">
+                    India
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-3 font-light">
+                    Travel community
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-2 font-light">
+                    155,073 travelers
+                  </h1>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className=" ">
-                <div className="shadow-2xl rounded-3xl my-5 ">
-                  <div className=" p-3 border border-gray-50 rounded-3xl">
-                    <Image
-                      className="mx-auto "
-                      src="/Frame 33.png"
-                      width={343}
-                      height={221}
-                      alt="Frame"
-                    />
-                    <h1 className="text-black text-[20px] mt-5 ">
-                      Travel Talk
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-3 font-light">
-                      Travel community
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-2 font-light">
-                      155,073 travelers
-                    </h1>
-                  </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <div className="shadow-md rounded-3xl my-5 ">
+                <div className=" p-3 border border-gray-50 rounded-3xl">
+                  <Image
+                    className="mx-auto "
+                    src="/Frame 33.png"
+                    width={343}
+                    height={221}
+                    alt="Frame"
+                  />
+                  <h1 className="text-black lg:text-[20px] md:text-[18px] text-[14px] mt-5 ">
+                    Travel Talk
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-3 font-light">
+                    Travel community
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-2 font-light">
+                    155,073 travelers
+                  </h1>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide className=" ">
-                <div className="shadow-2xl rounded-3xl my-5 ">
-                  <div className=" p-3 border border-gray-50 rounded-3xl">
-                    <Image
-                      className="mx-auto "
-                      src="/Frame 34.png"
-                      width={343}
-                      height={221}
-                      alt="Frame"
-                    />
-                    <h1 className="text-black text-[20px] mt-5 ">Beach</h1>
-                    <h1 className="text-black text-[17px] mt-3 font-light">
-                      Travel community
-                    </h1>
-                    <h1 className="text-black text-[17px] mt-2 font-light">
-                      155,073 travelers
-                    </h1>
-                  </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className=" ">
+              <div className="shadow-md rounded-3xl my-5 ">
+                <div className=" p-3 border border-gray-50 rounded-3xl">
+                  <Image
+                    className="mx-auto "
+                    src="/Frame 34.png"
+                    width={343}
+                    height={221}
+                    alt="Frame"
+                  />
+                  <h1 className="text-black lg:text-[20px] md:text-[18px] text-[14px] mt-5 ">
+                    Beach
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-3 font-light">
+                    Travel community
+                  </h1>
+                  <h1 className="text-black lg:text-[17px] md:text-[15px] text-[12px] mt-2 font-light">
+                    155,073 travelers
+                  </h1>
                 </div>
-              </SwiperSlide>
-            </div>
+              </div>
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>
@@ -718,7 +878,7 @@ export default function Home() {
                 <h1 className="text-white text-[53px] font-bold">
                   Your all-in-one travel app.
                 </h1>
-                <h1 className="text-white text-[26px] font-normal mt-8">
+                <h1 className="text-white lg:text-[15px] xl:text-[26px] 2xl:text-[26px] text-[10px]  font-normal mt-8">
                   Book flights, hotels, trains & rental cars anywhere in the
                   world in just seconds. Get real-time flight updates, travel
                   info, exclusive deals, and 30% more Trip Coins only on the
@@ -747,9 +907,47 @@ export default function Home() {
                       Enter your phone number to receive a text with a link to
                       download the app.
                     </h1>
+                    <div className="">
+                      <style jsx>{`
+                        .bt-4 {
+                          background-color: rgba(255, 255, 255, 0.4);
+                        }
+                      `}</style>
+                      <div className="bt-4 px-3 py-3 rounded-3xl mt-5 ">
+                        <div className="lg:flex justify-between">
+                          <div className=" w-full ">
+                            <label className="relative block w-full cursor-text">
+                              <span className="sr-only">Search</span>
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-1  w-full text-white text-[17px]">
+                                +92
+                              </span>
+                              <input
+                                className=" placeholder:text-white py-2 pl-10  text-[17px] bg-transparent outline-none text-white "
+                                placeholder=" Mobile Numbers"
+                                type="text"
+                                name="search"
+                              />
+                            </label>
+                          </div>
+                          <div className="">
+                            <button className="rounded-full bg-white text-[#2659C3] text-[17px] w-[232px] py-2.5  mt-3 lg:mt-0">
+                              Search
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className=""></div>
-                  <div className="">
+                  <div className="mt-10">
+                    <Image
+                      className="mx-auto"
+                      src="/Frame 82.svg"
+                      width={17}
+                      height={160}
+                      alt="Frame"
+                    />
+                  </div>
+                  <div className="mt-10">
                     <Image
                       className="mx-auto"
                       src="/playstore.png"
@@ -758,7 +956,7 @@ export default function Home() {
                       alt="playstore"
                     />
                     <Image
-                      className="mx-auto mt-5"
+                      className="mx-auto mt-8"
                       src="/image 22.png"
                       width={224.53}
                       height={67}
@@ -771,36 +969,65 @@ export default function Home() {
           </div>
         </a>
       </div>
-      <div className="bg-[#141414] p-32 ">
-        <div className="lg:max-w-[1247px] w-full mx-auto">
-          <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8">
+      <div className="bg-[#141414] md:p-20 p-10 ">
+        <div className="lg:max-w-[1247px] w-full mx-auto px-5">
+          <div className="lg:flex gap-32">
             <div className="lg:w-[93px] w-full">
               <h1 className="font-bold text-white text-[35px]">Trxvl.</h1>
             </div>
-            <div className="lg:w-[160px] w-full ">
-              <h1 className="text-sm text-[#808080] ">
-                Seslendirme ve Alt Jazz
+            <div className="lg:w-[1015.15px] w-full mt-5">
+              <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-between lg:gap-26 xl:gap-44 2xl:gap-44 gap-7">
+                <div className="lg:w-[160px] w-full lg:mt-0 mt-4 ">
+                  <h1 className="text-sm text-[#808080] ">
+                    Seslendirme ve Alt Jazz
+                  </h1>
+                  <h1 className="text-sm text-[#808080] mt-4">Media Market</h1>
+                  <h1 className="text-sm text-[#808080] mt-4">Gillie</h1>
+                  <h1 className="text-sm text-[#808080] mt-4">Size Last</h1>
+                </div>
+                <div className="lg:w-[109px] w-full lg:mt-0 mt-4">
+                  <h1 className="text-sm text-[#808080]">Self Betimes</h1>
+                  <h1 className="text-sm text-[#808080] mt-4">
+                    Yatırımcı İlişkileri
+                  </h1>
+                  <h1 className="text-sm text-[#808080] mt-4">Basal Himmler</h1>
+                </div>
+                <div className="lg:w-[88px] w-full lg:mt-0 mt-4">
+                  <h1 className="text-sm text-[#808080]">Yard Market</h1>
+                  <h1 className="text-sm text-[#808080] mt-4">Is İmkanları</h1>
+                  <h1 className="text-sm text-[#808080] mt-4">
+                    Car Tercihleri
+                  </h1>
+                </div>
+                <div className="lg:w-[120px] w-full lg:mt-0 mt-4">
+                  <h1 className="text-sm text-[#808080]">Hedge Karla</h1>
+                  <h1 className="text-sm text-[#808080] mt-4">
+                    Mullein Koşulları
+                  </h1>
+                  <h1 className="text-sm text-[#808080] mt-4">
+                    Autumnal Bulgier
+                  </h1>
+                </div>
+              </div>
+              <div className="lg:flex justify-between items-center mt-12">
+                <div className="">
+                  <button className="border bg-transparent  text-[#808080] border-[#808080] px-3 lg:w-[135px] w-full py-3 hover:bg-black duration-150 ">
+                    Helmet KOD
+                  </button>
+                </div>
+                <div className="lg:mt-0 mt-12 ">
+                  <Image
+                    className="cursor-pointer "
+                    src="/social.svg"
+                    width={172.7}
+                    height={26}
+                    alt="Social"
+                  />
+                </div>
+              </div>
+              <h1 className="text-xs text-[#808080] mt-8">
+                © 1997-2021 Netflix, Inc.i-062d573a0ee099242{" "}
               </h1>
-              <h1 className="text-sm text-[#808080] mt-4">Media Market</h1>
-              <h1 className="text-sm text-[#808080] mt-4">Gillie</h1>
-              <h1 className="text-sm text-[#808080] mt-4">Size Last</h1>
-            </div>
-            <div className="lg:w-[109px] w-full lg:mt-0 mt-4">
-              <h1 className="text-sm text-[#808080]">Self Betimes</h1>
-              <h1 className="text-sm text-[#808080] mt-4">
-                Yatırımcı İlişkileri
-              </h1>
-              <h1 className="text-sm text-[#808080] mt-4">Basal Himmler</h1>
-            </div>
-            <div className="lg:w-[88px] w-full lg:mt-0 mt-4">
-              <h1 className="text-sm text-[#808080]">Yard Market</h1>
-              <h1 className="text-sm text-[#808080] mt-4">Is İmkanları</h1>
-              <h1 className="text-sm text-[#808080] mt-4">Car Tercihleri</h1>
-            </div>
-            <div className="lg:w-[120px] w-full lg:mt-0 mt-4">
-              <h1 className="text-sm text-[#808080]">Hedge Karla</h1>
-              <h1 className="text-sm text-[#808080] mt-4">Mullein Koşulları</h1>
-              <h1 className="text-sm text-[#808080] mt-4">Autumnal Bulgier</h1>
             </div>
           </div>
         </div>
